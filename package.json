@@ -1,0 +1,42 @@
+{
+	"name": "serverinfo",
+	"version": "1.0.0",
+	"description": "MediaWiki extension to show Server-side information like phpinfo()",
+	"main": "index.js",
+	"private": false,
+	"scripts": {
+		"pretest": "npm install",
+		"test": "grunt test"
+	},
+	"devDependencies": {
+		"eslint-config-wikimedia": "0.20.0",
+		"grunt": "1.3.0",
+		"grunt-banana-checker": "0.9.0",
+		"grunt-eslint": "23.0.0",
+		"grunt-stylelint": "0.16.0",
+		"stylelint-config-wikimedia": "0.10.3"
+	},
+	"eslintIgnore": [
+		"vendor/**"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/freephile/ServerInfo.git"
+	},
+	"author": "Greg Rundlett <greg.rundlett@pega.com>",
+	"license": "GPL",
+	"keywords": [
+		"phpinfo",
+		"serverinfo",
+		"apache status"
+	],
+	"comments": {
+		"devDependencies": "do we need eslint-plugin-no-jquery still?",
+		"scripts": "is the pretest functional?",
+		"scripts2": "Is grunt a wrapper around eslint?"
+	},
+	"bugs": {
+		"url": "https://github.com/freephile/ServerInfo/issues"
+	},
+	"homepage": "https://github.com/freephile/ServerInfo#README"
+}

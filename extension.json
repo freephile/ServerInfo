@@ -1,0 +1,52 @@
+{
+	"name": "ServerInfo",
+	"author": [
+		"Greg Rundlett"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:ServerInfo",
+	"descriptionmsg": "serverinfo-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\ServerInfo\\": "includes/"
+	},
+	"config": {
+		"ServerInfoEnableFoo": {
+			"description": "Enable the Foo feature.",
+			"value": true
+		},
+		"ServerInfoVandalizeEachPage": {
+			"description": "Write 'ServerInfo was here' on each page",
+			"value": false
+		}
+	},
+	"HookHandlers": {
+		"ServerInfoHooks": {
+			"class": "MediaWiki\\Extension\\ServerInfo\\Hooks"
+		}
+	},
+	"Hooks": {
+		"BeforePageDisplay": "ServerInfoHooks"
+	},
+	"MessagesDirs": {
+		"ServerInfo": [
+			"i18n"
+		]
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "ServerInfo/resources"
+	},
+	"ResourceModules": {
+		"ext.serverInfo": {
+			"dependencies": [],
+			"messages": [],
+			"styles": [],
+			"scripts": []
+		}
+	},
+	"manifest_version": 2
+}

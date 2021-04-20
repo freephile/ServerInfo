@@ -3,7 +3,7 @@
 	"author": [
 		"Greg Rundlett"
 	],
-	"url": "https://www.mediawiki.org/wiki/Extension:ServerInfo",
+	"url": "https://github.com/freephile/ServerInfo",
 	"descriptionmsg": "serverinfo-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
@@ -13,23 +13,10 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\ServerInfo\\": "includes/"
 	},
-	"config": {
-		"ServerInfoEnableFoo": {
-			"description": "Enable the Foo feature.",
-			"value": true
-		},
-		"ServerInfoVandalizeEachPage": {
-			"description": "Write 'ServerInfo was here' on each page",
-			"value": false
-		}
-	},
 	"HookHandlers": {
 		"ServerInfoHooks": {
 			"class": "MediaWiki\\Extension\\ServerInfo\\Hooks"
 		}
-	},
-	"Hooks": {
-		"BeforePageDisplay": "ServerInfoHooks"
 	},
 	"MessagesDirs": {
 		"ServerInfo": [

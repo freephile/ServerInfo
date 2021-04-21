@@ -37,8 +37,8 @@
 		}
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": "resources",
-		"remoteExtPath": "ServerInfo/resources"
+		"localBasePath": "resources/ext.serverInfo/",
+		"remoteExtPath": "ServerInfo/resources/ext.serverInfo/"
 	},
 	"ResourceModules": {
 		"ext.serverInfo": {

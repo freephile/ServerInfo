@@ -47,7 +47,7 @@ class SpecialServerInfo extends SpecialPage {
 			}
 		}
 
-		$header = '<div id="serverinfonav" class="container">';
+		$header = '<div id="serverinfonav" class="container" style="display: flex; justify-content: center;">';
 		$header .= implode( '&nbsp;', $headerLinks );
 		$header .= '</div>';
 

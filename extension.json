@@ -23,6 +23,20 @@
 			"i18n"
 		]
 	},
+	"AvailableRights": [
+		"viewserverinfo"
+	],
+	"GroupPermissions": {
+		"sysop": {
+			"viewserverinfo": true
+		},
+		"user": {
+			"viewserverinfo": false
+		},
+		"*": {
+			"viewserverinfo": false
+		}
+	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
 		"remoteExtPath": "ServerInfo/resources"

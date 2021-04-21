@@ -21,6 +21,9 @@ class SpecialServerInfo extends SpecialPage {
 			return;
 		}
 
+		$output = $this->getOutput();
+		$out->enableOOUI();
+
 		$webRequest = $this->getRequest();
 		// Default to phpinfo
 		$requestedMode = $webRequest->getVal( 'mode', 'phpinfo' );
@@ -84,8 +87,7 @@ class SpecialServerInfo extends SpecialPage {
 				break;
 		}
 
-		$output = $this->getOutput();
-		$out->enableOOUI();
+
 		$output->setPageTitle(
 			$this->msg( strtolower( $this->mName ) )->text()
 		);

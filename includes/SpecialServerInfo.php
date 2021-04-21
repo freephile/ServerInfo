@@ -22,7 +22,7 @@ class SpecialServerInfo extends SpecialPage {
 		}
 
 		$output = $this->getOutput();
-		$out->enableOOUI();
+		$output->enableOOUI();
 
 		$webRequest = $this->getRequest();
 		// Default to phpinfo

@@ -4,9 +4,9 @@ class SpecialServerInfo extends SpecialPage {
 
 	public $mMode;
 
-	public function __construct( $name = 'Serverinfo' ) {
+	public function __construct( $name = 'ServerInfo' ) {
 		parent::__construct(
-			$name, //
+			$name,
 			"viewserverinfo",  // rights required to view
 			true // show in Special:SpecialPages
 		);

@@ -1,5 +1,6 @@
 {
 	"name": "ServerInfo",
+	"version": "1.0.0",
 	"author": [
 		"Greg Rundlett"
 	],
@@ -12,6 +13,9 @@
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\ServerInfo\\": "includes/"
+	},
+	"SpecialPages": {
+		"ServerInfo": "MediaWiki\\Extension\\ServerInfo\\SpecialServerInfo"
 	},
 	"HookHandlers": {
 		"ServerInfoHooks": {

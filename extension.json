@@ -37,13 +37,19 @@
 		}
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": "resources/ext.serverInfo/",
-		"remoteExtPath": "ServerInfo/resources/ext.serverInfo/"
+		"localBasePath": "resources/ext.serverInfo",
+		"remoteExtPath": "ServerInfo/resources/ext.serverInfo"
 	},
 	"ResourceModules": {
 		"ext.serverInfo": {
 			"dependencies": [],
-			"messages": [],
+			"messages": [
+				"serverinfo",
+				"serverinfo-desc",
+				"serverinfo-mode-phpinfo",
+				"serverinfo-mode-httpdstatus",
+				"serverinfo-mode-httpdinfo"
+			],
 			"styles": [ "serverinfo.css" ],
 			"scripts": []
 		}

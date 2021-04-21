@@ -1,4 +1,4 @@
-#serverinfonav .container {
+#serverinfonav.container {
 	display: flex;
 	justify-content: center;
 }

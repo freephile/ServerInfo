@@ -12,7 +12,7 @@ class SpecialServerInfo extends SpecialPage {
 		);
 	}
 
-	function execute( $par ) {
+	function execute( $param ) {
 
 		// Only allow users with 'viewserverinfo' right (sysop by default) to access
 		$user = $this->getUser();
@@ -32,21 +32,21 @@ class SpecialServerInfo extends SpecialPage {
 			$linkText = $this->msg( 'serverinfo-mode-' . $mode )->text();
 
 			if ( $mode === $requestedMode ) {
-				$headerLinks[] = Xml::element( 'strong', null, $linkText );
+				$headerLinks[] = new OOUI\ButtonWidget( [
+					'label' => "$linkText"
+				] );
 			}
 			else {
-				$headerLinks[] = Linker::link(
-					$this->getPageTitle(),
-					$linkText,
-					[], // custom attributes
-					[ 'mode' => $mode ]
-				);
+				$headerLinks[] = new OOUI\ButtonWidget( [
+					'label' => "$linkText",
+					'href' => $this->getPageTitle() . "?mode=$mode"
+				]);
 			}
 		}
 
-		$header = '<span class="successbox">';
-		$header .= implode( '</span><span class="successbox">', $headerLinks );
-		$header .= '</span>';
+		$header = '<div class="container">';
+		$header .= implode( '&nbsp;', $headerLinks );
+		$header .= '</div>';
 
 		switch ( $requestedMode ) {
 			case 'httpdinfo':
@@ -85,6 +85,7 @@ class SpecialServerInfo extends SpecialPage {
 		}
 
 		$output = $this->getOutput();
+		$out->enableOOUI();
 		$output->setPageTitle(
 			$this->msg( strtolower( $this->mName ) )->text()
 		);

@@ -93,6 +93,9 @@ class SpecialServerInfo extends SpecialPage {
 		);
 		$output->addHTML( $header . $body );
 
+		$clock = shell_exec( 'cat /sys/devices/system/clocksource/clocksource0/current_clocksource' );
+		$output->addHTML( '<div class="footer">Current clocksource is ' . $clock . '</div>' );
+
 	}
 
 }

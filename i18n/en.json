@@ -9,5 +9,9 @@
 	"serverinfo-mode-phpinfo": "PHP Info",
 	"serverinfo-mode-httpdstatus": "Apache Status",
 	"serverinfo-mode-httpdinfo": "Apache Info",
-	"serverinfo-mode-clockinfo": "Clock Info"
+	"serverinfo-mode-clockinfo": "Clock Info",
+	"serverinfo-available-clocks": "What clock sources are available on the system?",
+	"serverinfo-current-clock": "What clock source is currently in use on the system?",
+	"serverinfo-supported-clocks": "What kind of timestamp counter does the CPU support?",
+	"serverinfo-vdso-enabled": "Is vDSO enabled?"
 }

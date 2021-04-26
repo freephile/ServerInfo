@@ -93,19 +93,17 @@ class SpecialServerInfo extends SpecialPage {
 				$strace = shell_exec( 'strace php -m 2>&1 | grep gettimeofday' );
 				$vdsoEnabled = preg_match( '/gettimeofday/', $strace );
 
-				$body = <<<HERE
-<div class="container">
-<h2>What clock sources are available on the system?</h2>
-$availableClocks 
-<h2>What clock source is currently in use on the system?</h2>
-$currentClock
-<h2>What kind of timestamp counter does the CPU support?</h2>
-$supportedClocks
-<h2>Is vDSO enabled?</h2>
-$vdsoEnabled
-</div>
-HERE
-;
+				$body = '<div class="container">';
+				$body .= '<h2>' . $this->msg( 'serverinfo-available-clocks' )->text() . '</h2>';
+				$body .= $availableClocks; 
+				$body .= '<h2>' . $this->msg( 'serverinfo-current-clock' )->text() . '</h2>';
+				$body .= $currentClock;
+				$body .= '<h2>' . $this->msg( 'serverinfo-supported-clocks' )->text() . '</h2>';
+				$body .= $supportedClocks;
+				$body .= '<h2>' . $this->msg( 'serverinfo-vdso-enabled' )->text() . '</h2>';
+				$body .= $vdsoEnabled;
+				$body .= '</div>';
+
 				break;
 
 

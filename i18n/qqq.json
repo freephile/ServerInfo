@@ -8,5 +8,6 @@
 	"serverinfo-desc": "{{desc|name=ServerInfo|url=https://github.com/freephile/ServerInfo}}",
 	"serverinfo-mode-phpinfo": "Label for choosing phpinfo()",
 	"serverinfo-mode-httpdstatus": "Label for choosing Apache Status",
-	"serverinfo-mode-httpdinfo": "Label for choosing Apache Info"
+	"serverinfo-mode-httpdinfo": "Label for choosing Apache Info",
+	"serverinfo-mode-clockinfo": "Label for choosing Clock Info"
 }

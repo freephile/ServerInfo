@@ -28,7 +28,7 @@ class SpecialServerInfo extends SpecialPage {
 		// Default to phpinfo
 		$requestedMode = $webRequest->getVal( 'mode', 'phpinfo' );
 
-		$modes = [ 'httpdstatus', 'httpdinfo', 'phpinfo' ];
+		$modes = [ 'httpdstatus', 'httpdinfo', 'phpinfo', 'clockinfo' ];
 
 		$headerLinks = [];
 		foreach ( $modes as $mode ) {
@@ -82,6 +82,33 @@ class SpecialServerInfo extends SpecialPage {
 				ob_clean();
 				break;
 
+			case 'clockinfo':
+
+				$availableClocks = shell_exec( 'cat /sys/devices/system/clocksource/clocksource0/available_clocksource 2>&1' );
+				$currentClock =  shell_exec( 'cat /sys/devices/system/clocksource/clocksource0/current_clocksource 2>&1' );
+				$cpuInfo = shell_exec( 'cat /proc/cpuinfo' );
+				preg_match( '/tsc/', $cpuInfo, $matches );
+				$supportedClocks = $matches[0];
+				
+				$strace = shell_exec( 'strace php -m 2>&1 | grep gettimeofday' );
+				$vdsoEnabled = preg_match( '/gettimeofday/', $strace );
+
+				$body = <<<HERE
+<div class="container">
+<h2>What clock sources are available on the system?</h2>
+$availableClocks 
+<h2>What clock source is currently in use on the system?</h2>
+$currentClock
+<h2>What kind of timestamp counter does the CPU support?</h2>
+$supportedClocks
+<h2>Is vDSO enabled?</h2>
+$vdsoEnabled
+</div>
+HERE
+;
+				break;
+
+
 			default:
 				$body = file_get_contents( 'http://127.0.0.1:8090/server-status' );
 				break;
@@ -92,9 +119,6 @@ class SpecialServerInfo extends SpecialPage {
 			$this->msg( strtolower( $this->mName ) )->text()
 		);
 		$output->addHTML( $header . $body );
-
-		$clock = shell_exec( 'cat /sys/devices/system/clocksource/clocksource0/current_clocksource' );
-		$output->addHTML( '<div class="footer">Current clocksource is ' . $clock . '</div>' );
 
 	}
 

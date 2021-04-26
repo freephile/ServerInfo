@@ -8,5 +8,6 @@
 	"serverinfo-desc": "This extension provides Wiki SysOps with Server Information from phpinfo()",
 	"serverinfo-mode-phpinfo": "PHP Info",
 	"serverinfo-mode-httpdstatus": "Apache Status",
-	"serverinfo-mode-httpdinfo": "Apache Info"
+	"serverinfo-mode-httpdinfo": "Apache Info",
+	"serverinfo-mode-clockinfo": "Clock Info"
 }

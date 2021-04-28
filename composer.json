@@ -23,6 +23,9 @@
 	"support": {
 		"issues": "https://github.com/freephile/ServerInfo/issues"
 	},
+	"require": {
+		"composer/installers": "^1.0.1"
+	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "35.0.0",
 		"mediawiki/minus-x": "1.1.1",
@@ -39,6 +42,10 @@
 			"minus-x fix .",
 			"phpcbf"
 		]
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"prepend-autoloader": false
 	},
 	"extra": {
 		"branch-alias": {

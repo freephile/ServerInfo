@@ -1,4 +1,28 @@
 {
+	"name": "mediawiki/serverinfo",
+	"type": "mediawiki-extension",
+	"description": "Provides administrators with valuable server information including phpinfo() and clock source",
+	"keywords": [
+		"wiki",
+		"mediawiki",
+		"phpinfo",
+		"clocksource",
+		"apache status",
+		"apache info"
+	],
+	"homepage": "https://github.com/freephile/ServerInfo",
+	"readme": "README.md",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Greg Rundlett",
+			"email": "greg.rundlett@gmail.com",
+			"role": "Maintainer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/freephile/ServerInfo/issues"
+	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "35.0.0",
 		"mediawiki/minus-x": "1.1.1",
@@ -15,5 +39,10 @@
 			"minus-x fix .",
 			"phpcbf"
 		]
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.x-dev"
+		}
 	}
 }

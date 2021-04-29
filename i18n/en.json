@@ -5,7 +5,7 @@
 		]
 	},
 	"serverinfo": "Server Info",
-	"serverinfo-desc": "This extension provides Wiki SysOps with Server Information from phpinfo()",
+	"serverinfo-desc": "This extension provides Wiki SysOps with [[Special:ServerInfo]] like phpinfo via a Special Page",
 	"serverinfo-mode-phpinfo": "PHP Info",
 	"serverinfo-mode-httpdstatus": "Apache Status",
 	"serverinfo-mode-httpdinfo": "Apache Info",

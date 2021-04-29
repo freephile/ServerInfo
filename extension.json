@@ -48,7 +48,8 @@
 				"serverinfo-desc",
 				"serverinfo-mode-phpinfo",
 				"serverinfo-mode-httpdstatus",
-				"serverinfo-mode-httpdinfo"
+				"serverinfo-mode-httpdinfo",
+				"serverinfo-mode-clockinfo"
 			],
 			"styles": [ "serverinfo.css" ],
 			"scripts": []

@@ -2,7 +2,7 @@
 	"name": "ServerInfo",
 	"version": "1.0.0",
 	"author": [
-		"Greg Rundlett"
+		"[https://www.mediawiki.org/wiki/User:GregRundlett Greg Rundlett]"
 	],
 	"url": "https://github.com/freephile/ServerInfo",
 	"descriptionmsg": "serverinfo-desc",

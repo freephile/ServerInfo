@@ -3,9 +3,9 @@ environments like Container-based deploys where it might be difficult to simply 
 a phpinfo script. The default permissions allow only Admin users (Wiki SysOps) to view the Special Page
 
 A separate option 'Clock Info' provides details on available clock sources.  This comes in 
-real handy when running your wiki on AWS (https://heap.io/blog/engineering/clocksource-aws-ec2-vdso),
+real handy when [running your wiki on AWS](https://heap.io/blog/engineering/clocksource-aws-ec2-vdso),
 especially when doing application profiling or deep monitoring like provided by e.g. New Relic. In these
-situations you want to make sure you are using a [very precise clock](https://blog.trailofbits.com/2019/10/03/tsc-frequency-for-all-better-profiling-and-benchmarking/). See [here](https://access.redhat.com/solutions/18627) 
+situations you want to make sure you are using a [very precise clock](https://blog.trailofbits.com/2019/10/03/tsc-frequency-for-all-better-profiling-and-benchmarking/). See [RedHat](https://access.redhat.com/solutions/18627) 
 for instructions on changing your clock on RedHat systems and also a quick overview on 
 hardware clock and system timer circuits. 
 
@@ -35,9 +35,11 @@ Now, run `composer test` whenever you want to run the automated checks and tests
 ## Front-end
 To run the checks for JavaScript, JSON, and CSS:
 
+* If using Fresh (recommended), run `fresh-node`
 * Run `npm install`
 
 This will intall testing software to `node_modules/` in the current directory.
+If using Fresh, the testing software will be installed into a temporary sandboxed container isolated from your system.
 
 Now, run `npm test` to run the automated front-end code checks..
 

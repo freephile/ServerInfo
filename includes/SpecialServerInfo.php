@@ -29,25 +29,25 @@ class SpecialServerInfo extends SpecialPage {
 
 		$modes = [ 'httpdstatus', 'httpdinfo', 'phpinfo', 'clockinfo' ];
 
-		$headerLinks = [];
+		$topLinks = [];
 		foreach ( $modes as $mode ) {
 			$linkText = $this->msg( 'serverinfo-mode-' . $mode )->text();
 
 			if ( $mode === $requestedMode ) {
-				$headerLinks[] = new OOUI\ButtonWidget( [
+				$topLinks[] = new OOUI\ButtonWidget( [
 					'label' => "$linkText"
 				] );
 			} else {
-				$headerLinks[] = new OOUI\ButtonWidget( [
+				$topLinks[] = new OOUI\ButtonWidget( [
 					'label' => "$linkText",
 					'href' => $this->getPageTitle() . "?mode=$mode"
 				] );
 			}
 		}
 
-		$header = '<div id="serverinfonav" class="container" style="display: flex; justify-content: center;">';
-		$header .= implode( '&nbsp;', $headerLinks );
-		$header .= '</div>';
+		$top = '<div class="serverinfonav"';
+		$top .= implode( '&nbsp;', $topLinks );
+		$top .= '</div>';
 
 		switch ( $requestedMode ) {
 			case 'httpdinfo':
@@ -91,7 +91,7 @@ class SpecialServerInfo extends SpecialPage {
 				$strace = shell_exec( 'strace php -m 2>&1 | grep gettimeofday' );
 				$vdsoEnabled = preg_match( '/gettimeofday/', $strace );
 
-				$body = '<div class="container">';
+				$body = '<div>';
 				$body .= '<h2>' . $this->msg( 'serverinfo-available-clocks' )->text() . '</h2>';
 				$body .= $availableClocks;
 				$body .= '<h2>' . $this->msg( 'serverinfo-current-clock' )->text() . '</h2>';
@@ -112,7 +112,7 @@ class SpecialServerInfo extends SpecialPage {
 		$output->setPageTitle(
 			$this->msg( strtolower( $this->mName ) )->text()
 		);
-		$output->addHTML( $header . $body );
+		$output->addHTML( $top . $body );
 	}
 
 }

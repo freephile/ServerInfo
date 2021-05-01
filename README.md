@@ -12,9 +12,37 @@ hardware clock and system timer circuits.
 The options for Apache Server Status and Apache Info obviously depend on using Apache
 but also require some setup of the Apache environment to allow access to server-status and server-info.
 
-This extension includes the standard code checkers for PHP and JavaScript code in Wikimedia projects
-(see https://www.mediawiki.org/wiki/Continuous_integration/Entry_points).
-To take advantage of this automation.
+
+## Testing
+This extension implements [the recommended entry points of Wikimedia CI for PHP and Front-end projects](https://www.mediawiki.org/wiki/Continuous_integration/Entry_points).
+
+Before you can test and build code locally, you need:
+
+* PHP 7.1, or later. (with Composer)
+* Node.js 10, or later. (with npm)
+
+You can meet all the software requirements without modifying your local system by using Docker and [Fresh](https://www.mediawiki.org/wiki/Selenium/Getting_Started/Run_tests_using_Fresh)
+
+## PHP
+To run the PHP code checks and unit tests:
+
+* Run `composer update`
+
+This will install testing software to `vendor/` in the current directory.
+
+Now, run `composer test` whenever you want to run the automated checks and tests.
+
+## Front-end
+To run the checks for JavaScript, JSON, and CSS:
+
+* Run `npm install`
+
+This will intall testing software to `node_modules/` in the current directory.
+
+Now, run `npm test` to run the automated front-end code checks..
+
+## Contributing
+git clone https://github.com/freephile/ServerInfo.git
 
 ## Credits
 This extension is based on the work of James Montalvo and his [MezaExtension](https://github.com/enterprisemediawiki/MezaExt)

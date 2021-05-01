@@ -45,7 +45,7 @@ class SpecialServerInfo extends SpecialPage {
 			}
 		}
 
-		$top = '<div class="serverinfonav"';
+		$top = '<div class="serverinfonav">';
 		$top .= implode( '&nbsp;', $topLinks );
 		$top .= '</div>';
 

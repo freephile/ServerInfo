@@ -13,7 +13,6 @@ class SpecialServerInfo extends SpecialPage {
 	}
 
 	function execute( $param ) {
-
 		// Only allow users with 'viewserverinfo' right (sysop by default) to access
 		$user = $this->getUser();
 		if ( !$this->userCanExecute( $user ) ) {
@@ -38,12 +37,11 @@ class SpecialServerInfo extends SpecialPage {
 				$headerLinks[] = new OOUI\ButtonWidget( [
 					'label' => "$linkText"
 				] );
-			}
-			else {
+			} else {
 				$headerLinks[] = new OOUI\ButtonWidget( [
 					'label' => "$linkText",
 					'href' => $this->getPageTitle() . "?mode=$mode"
-				]);
+				] );
 			}
 		}
 
@@ -85,17 +83,17 @@ class SpecialServerInfo extends SpecialPage {
 			case 'clockinfo':
 
 				$availableClocks = shell_exec( 'cat /sys/devices/system/clocksource/clocksource0/available_clocksource 2>&1' );
-				$currentClock =  shell_exec( 'cat /sys/devices/system/clocksource/clocksource0/current_clocksource 2>&1' );
+				$currentClock = shell_exec( 'cat /sys/devices/system/clocksource/clocksource0/current_clocksource 2>&1' );
 				$cpuInfo = shell_exec( 'cat /proc/cpuinfo' );
 				preg_match( '/tsc/', $cpuInfo, $matches );
 				$supportedClocks = $matches[0];
-				
+
 				$strace = shell_exec( 'strace php -m 2>&1 | grep gettimeofday' );
 				$vdsoEnabled = preg_match( '/gettimeofday/', $strace );
 
 				$body = '<div class="container">';
 				$body .= '<h2>' . $this->msg( 'serverinfo-available-clocks' )->text() . '</h2>';
-				$body .= $availableClocks; 
+				$body .= $availableClocks;
 				$body .= '<h2>' . $this->msg( 'serverinfo-current-clock' )->text() . '</h2>';
 				$body .= $currentClock;
 				$body .= '<h2>' . $this->msg( 'serverinfo-supported-clocks' )->text() . '</h2>';
@@ -106,18 +104,15 @@ class SpecialServerInfo extends SpecialPage {
 
 				break;
 
-
 			default:
 				$body = file_get_contents( 'http://127.0.0.1:8090/server-status' );
 				break;
 		}
 
-
 		$output->setPageTitle(
 			$this->msg( strtolower( $this->mName ) )->text()
 		);
 		$output->addHTML( $header . $body );
-
 	}
 
 }

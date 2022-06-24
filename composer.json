@@ -1,5 +1,5 @@
 {
-	"name": "mediawiki/serverinfo",
+	"name": "mediawiki/server-info",
 	"type": "mediawiki-extension",
 	"description": "Provides administrators with valuable server information including phpinfo() and clock source",
 	"keywords": [
